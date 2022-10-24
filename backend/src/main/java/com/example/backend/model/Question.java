@@ -13,7 +13,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Question {
 
     @Id
-    private Integer id;
+    private String id;
     private String category;
     private String questionText;
 
