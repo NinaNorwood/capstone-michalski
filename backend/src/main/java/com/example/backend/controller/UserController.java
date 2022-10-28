@@ -18,8 +18,8 @@ public class UserController {
     }
 
     @PostMapping("/user")
-    public User addName(@RequestBody User userName){
-        return userService.addName(userName);
+    public User addNames(@RequestBody User userName){
+        return userService.addNames(userName);
     }
 
 

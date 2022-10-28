@@ -1,7 +1,8 @@
 
 type User = {
 
-    userName : string;
+    userName1 : string;
+    userName2 : string;
 }
 
 export default User;

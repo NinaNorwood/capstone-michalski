@@ -29,11 +29,12 @@ class UserControllerTest {
     @Test
     void addName() throws Exception {
         //GIVEN
-        userRepository.save(new User("1", "Klaus"));
+        userRepository.save(new User("Klaus", "Lisa"));
 
         String expectedJson = """
                 {
-                "name":"Klaus"
+                "userName1":"Klaus",
+                "userName2":"Lisa"
                 }
                 """;
 
@@ -41,7 +42,7 @@ class UserControllerTest {
         mockMvc.perform(post("/user")
                 .header(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE)
                 .content("""
-                        {"id":"1","name":"Klaus"}
+                        {"userName1":"Klaus", "userName2":"Lisa"}
                         """))
                 .andExpect(status().isOk())
                 .andExpect(content().json(expectedJson));

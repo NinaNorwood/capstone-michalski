@@ -13,7 +13,11 @@ public class UserService {
         this.userRepository = userRepository;
     }
 
-    public User addName(User userName) {
-        return userRepository.save(userName);
+    public User addNames(User userName) {
+        User userNames = User.builder()
+                .userName1(userName.getUserName1())
+                .userName2(userName.getUserName2())
+                .build();
+        return userRepository.save(userNames);
     }
 }

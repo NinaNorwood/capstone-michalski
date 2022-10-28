@@ -15,11 +15,11 @@ class UserServiceTest {
     @Test
     void addName() {
         //GIVEN
-        User user1 = new User("1","Klaus");
+        User user1 = new User("Klaus", "Lisa");
         when(userRepository.save(user1)).thenReturn(user1);
 
         //WHEN
-        User actual = userService.addName(user1);
+        User actual = userService.addNames(user1);
 
         //THEN
         verify(userRepository).save(user1);
