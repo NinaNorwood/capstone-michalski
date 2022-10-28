@@ -16,6 +16,7 @@ export default function QuestionBox(props:QuestionsBoxProps) {
     return(
         <div>
             <h3>{randomQuestion?.questionText}</h3>
+
         </div>
     )
 

@@ -5,7 +5,6 @@ type Question = {
     category : string;
     questionText : string;
 
-
 }
 
 export default Question;

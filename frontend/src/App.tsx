@@ -1,5 +1,6 @@
 import {HashRouter, Route, Routes} from "react-router-dom";
 import './App.css';
+import NewUserPage from "./pages/NewUserPage";
 import QuestionPage from "./pages/QuestionPage";
 
 function App() {
@@ -15,7 +16,8 @@ function App() {
         <div>
             <HashRouter>
                 <Routes>
-                    <Route path={"/"} element={<QuestionPage/>}/>
+                    <Route path={"/"} element={<NewUserPage/>}/>
+                    <Route path={"/question"} element={<QuestionPage/>}/>
                 </Routes>
             </HashRouter>
         </div>
