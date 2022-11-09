@@ -18,9 +18,14 @@ public class QuestionController {
         this.questionService = questionService;
     }
 
-    @GetMapping("/question")
+    @GetMapping
     public List<Question> getAllQuestions(){
         return questionService.getAllQuestions();
+    }
+
+    @GetMapping("/question")
+    public Question getRandomQuestion(){
+        return questionService.getRandomQuestion();
     }
 
 }

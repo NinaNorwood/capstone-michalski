@@ -15,9 +15,12 @@ public class QuestionService {
         this.questionRepository = questionRepository;
     }
 
-
     public List<Question> getAllQuestions() {
         return questionRepository.findAll();
     }
 
+    public Question getRandomQuestion() {
+        List<Question> random = questionRepository.findRandom();
+        return random.get(0);
+    }
 }

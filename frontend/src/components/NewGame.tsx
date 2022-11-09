@@ -1,16 +1,15 @@
 import {ChangeEvent, useState} from "react";
 import {useNavigate} from "react-router-dom";
 
-
-type NewUserProps = {
-    newUser : (userName1:string, userName2:string) => void
+type NewGameProps = {
+    newGame : (player1: string, player2: string) => void
 }
 
-export default function NewUser (props:NewUserProps) {
+export default function NewGame (props:NewGameProps) {
 
 
-    const [userName1, setUserName1] = useState("");
-    const [userName2, setUserName2] = useState("");
+    const [player1, setPlayer1] = useState("");
+    const [player2, setPlayer2] = useState("");
 
     const navigate = useNavigate();
     const navToQuestion = () => {
@@ -18,35 +17,36 @@ export default function NewUser (props:NewUserProps) {
     }
 
     const onNameChange1 = (event:ChangeEvent<HTMLInputElement>) => {
-        setUserName1(event.target.value)
+        setPlayer1(event.target.value)
     }
 
     const onNameChange2 = (event:ChangeEvent<HTMLInputElement>) => {
-        setUserName2(event.target.value)
+        setPlayer2(event.target.value)
     }
 
     const submitNames = () => {
-        props.newUser(userName1, userName2)
+        props.newGame(player1, player2)
         navToQuestion();
     }
 
     return(
         <section>
+            <h3>Enter your names</h3>
             <label>Player 1
                 <input
-                    value={userName1}
+                    value={player1}
                     placeholder="Enter Name"
                     onChange={onNameChange1}
                 />
             </label>
             <label>Player 2
                 <input
-                    value={userName2}
+                    value={player2}
                     placeholder="Enter Name"
                     onChange={onNameChange2}
                 />
             </label>
-            <button onClick={submitNames}>Let's go</button>
+            <button className="NextButtons" onClick={submitNames}>Let's go</button>
         </section>
     )
 
