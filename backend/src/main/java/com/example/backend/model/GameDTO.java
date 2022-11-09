@@ -10,9 +10,12 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@Document("user")
-public class User {
+@Document("game")
+public class GameDTO {
 
-    private String userName1;
-    private String userName2;
+    private String currentQuestion;
+    private Integer round;
+    private Integer maxRounds;
+    private Integer currentPlayer;
+    private String[] players;
 }
