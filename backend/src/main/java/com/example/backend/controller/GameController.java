@@ -17,8 +17,8 @@ public class GameController {
     }
 
     @PostMapping("/game")
-    public Game addNames(@RequestBody GameDTO gameDTO){
-        return gameService.addNames(gameDTO);
+    public Game createGame(@RequestBody GameDTO gameDTO){
+        return gameService.createGame(gameDTO);
     }
 
     @GetMapping("/game/{gameId}")
@@ -26,8 +26,10 @@ public class GameController {
         return gameService.getGameById(gameId);
     }
 
-
-
+    @PutMapping("/game/{gameId}")
+    public Game updateGame(@PathVariable String gameId, @RequestBody Game game) {
+        return gameService.updateGame(game);
+    }
 
 
 }

@@ -18,7 +18,7 @@ public class GameService {
         this.gameIdService = gameIdService;
     }
 
-    public Game addNames(GameDTO game) {
+    public Game createGame(GameDTO game) {
         Game gameFor2 = Game.builder()
                 .gameId(gameIdService.generateID())
                 .currentQuestionId(game.getCurrentQuestion())
@@ -34,5 +34,12 @@ public class GameService {
     public Game getGameById(String gameId) {
         return gameRepository.findById(gameId)
                 .orElseThrow(() -> new NoSuchElementException("No game found with this id: " + gameId));
+    }
+
+    public Game updateGame(Game game) {
+        if (!gameRepository.existsById(game.getGameId())) {
+            throw new NoSuchElementException("There is no game with the requested Id");
+        }
+        return gameRepository.save(game);
     }
 }
