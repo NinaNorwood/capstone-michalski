@@ -33,7 +33,7 @@ class GameServiceTest {
                         .build());
 
         //WHEN
-        Game actual = gameService.addNames(gameDTO);
+        Game actual = gameService.createGame(gameDTO);
 
         //THEN
         assertEquals(actual, expected);

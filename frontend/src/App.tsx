@@ -6,8 +6,11 @@ import MainPage from "./pages/MainPage";
 import MeetingSearchPage from "./pages/MeetingSearchPage";
 import "@fontsource/proza-libre";
 import FinishGamePage from "./pages/FinishGamePage";
+import useGame from "./hooks/useGame";
 
 function App() {
+
+    const {games, createGame} = useGame();
 
   return (
     <div className="App">
@@ -21,9 +24,9 @@ function App() {
             <HashRouter>
                 <Routes>
                     <Route path={"/"} element={<MainPage/>}/>
-                    <Route path={"/game"} element={<NewGamePage/>}/>
                     <Route path={"/search-meeting"} element={<MeetingSearchPage/>}/>
-                    <Route path={"/question"} element={<QuestionPage/>}/>
+                    <Route path={"/game"} element={<NewGamePage newGame={createGame}/>}/>
+                    <Route path={"/question"} element={<QuestionPage games={games}/>}/>
                     <Route path={"/finish"} element={<FinishGamePage/>}/>
                 </Routes>
             </HashRouter>

@@ -1,39 +1,47 @@
 import axios from "axios";
-import {useEffect, useState} from "react";
-import {useParams} from "react-router-dom";
+import {useState} from "react";
 import Game from "../model/Game";
+import GameDTO from "../model/GameDTO";
 
 export default function useGame() {
 
-    const [game, setGame] = useState<Game>();
+    const [games, setGames] = useState();
 
-    const {gameId} = useParams()
-
-    const addNames = (player1:string, player2:string) => {
-        let newGame = {
+    const createGame = (player1:string, player2:string) => {
+        let newGame:GameDTO = {
+            currentQuestion : "",
             round : 0,
             maxRounds : 9,
             currentPlayer : 0,
             players : [player1, player2]
         }
         axios.post("/game", newGame)
+            .then((response)=> {return response.data})
+            .then((data) => setGames(data))
             .catch(error => {console.log(error)})
     }
-
-    useEffect(() => {
-        if (gameId) {
-            getGameById(gameId)
-        }
-    }, [gameId])
 
     const getGameById = (gameId:string) => {
         axios.get("/game/" + gameId)
             .then((response) => {return response.data})
-            .then((game) => setGame(game))
+            .then((games) => setGames(games))
+            .catch(error => {console.log(error)})
+
+    }
+
+    const updateGame = (games:Game) => {
+        let newGame = {
+            gameId : games.gameId,
+            currentQuestion : games.currentQuestion,
+            round : games.round +1,
+            currentPlayer : games.currentPlayer +1,
+            players : games.players
+        }
+        axios.put("/game" + newGame.gameId, newGame)
             .catch(error => {console.log(error)})
     }
 
     return (
-        {addName: addNames}
+        {createGame, getGameById, games, updateGame}
     );
 }
