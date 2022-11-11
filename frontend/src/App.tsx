@@ -8,6 +8,7 @@ import "@fontsource/proza-libre";
 import FinishGamePage from "./pages/FinishGamePage";
 import useGame from "./hooks/useGame";
 import useRestaurants from "./hooks/useRestaurants";
+import RestaurantDetailPage from "./pages/RestaurantDetailPage";
 
 function App() {
 
@@ -27,6 +28,7 @@ function App() {
                 <Routes>
                     <Route path={"/"} element={<MainPage/>}/>
                     <Route path={"/api/restaurant"} element={<RestaurantListPage restaurants={restaurants}/>}/>
+                    <Route path={"/api/restaurant/:restaurantId"} element={<RestaurantDetailPage restaurants={restaurants}/>}/>
                     <Route path={"/api/game"} element={<NewGamePage newGame={createGame}/>}/>
                     <Route path={"/api/question/random"} element={<QuestionPage games={games}/>}/>
                     <Route path={"/finish"} element={<FinishGamePage/>}/>

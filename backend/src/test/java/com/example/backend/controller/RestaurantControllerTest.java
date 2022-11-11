@@ -10,6 +10,7 @@ import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -35,5 +36,29 @@ class RestaurantControllerTest {
                         .andExpect(content().string("""
                                 [{"restaurantId":"","restaurantName":"","restaurantPicture":"","restaurantAddress":"","restaurantWebsite":"","restaurantLocation":"","restaurantOnMap":""}]"""));
 
+    }
+
+    @DirtiesContext
+    @Test
+    void getRestaurantById() throws Exception {
+        //GIVEN
+        restaurantRepository.save(new Restaurant("123","","","","","",""));
+
+        String expectedJson = """
+                {
+                "restaurantId":"123",
+                "restaurantName":"",
+                "restaurantPicture":"",
+                "restaurantAddress":"",
+                "restaurantWebsite":"",
+                "restaurantLocation":"",
+                "restaurantOnMap":""
+                }
+                """;
+
+        //WHEN&THEN
+        this.mockMvc.perform(get("/api/restaurant/123"))
+                .andExpect(status().isOk())
+                .andExpect(content().json(expectedJson));
     }
 }

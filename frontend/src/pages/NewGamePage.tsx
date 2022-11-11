@@ -1,5 +1,6 @@
 import {ChangeEvent, useState} from "react";
 import {Link} from "react-router-dom";
+import "./NewGamePage.css";
 
 type NewGameProps = {
     newGame : (player1: string, player2: string) => void
