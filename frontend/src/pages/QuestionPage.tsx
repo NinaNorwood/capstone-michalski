@@ -1,5 +1,5 @@
 import {useEffect, useState} from "react";
-import "../styles/StyleAll.css";
+import "./QuestionPage.css";
 import {useNavigate} from "react-router-dom";
 import useQuestions from "../hooks/useQuestions";
 import Game from "../model/Game";

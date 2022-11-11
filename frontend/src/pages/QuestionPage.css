@@ -1,0 +1,23 @@
+h4 {
+    font-family: "Proza Libre", monospace;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 27px;
+}
+
+.QuestionBoxes {
+    background: #FFFFFF;
+    border: 5px solid #52FFB8;
+    box-shadow: 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+    height: 12em;
+    margin: 1em;
+    padding-left: 2em;
+    padding-right: 2em;
+}
+
+.QuestionBoxes-Top {
+    border-bottom: 5px solid #52FFB8;
+    padding-bottom: 0.5em;
+}

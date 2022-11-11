@@ -16,5 +16,12 @@ export default function useRestaurants () {
             .catch(error => {console.log(error)})
     }
 
-    return {restaurants}
+    const getRestaurantById = (restaurantId:string) => {
+        axios.get("/api/restaurant/" + restaurantId)
+            .then(response => {return response.data})
+            .then((restaurants) => {setRestaurants(restaurants)})
+            .catch(error => {console.log(error)})
+    }
+
+    return {restaurants, getRestaurantById}
 }

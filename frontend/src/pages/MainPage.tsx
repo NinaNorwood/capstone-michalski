@@ -1,4 +1,6 @@
 import {useNavigate} from "react-router-dom";
+import "../styles/Buttons.css"
+import "../styles/StyleAll.css"
 
 export default function MainPage () {
 
