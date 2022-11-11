@@ -41,7 +41,7 @@ export default function NewGamePage (props:NewGameProps) {
                     onChange={onNameChange2}
                 />
             </label>
-            <Link to={"/question"}>
+            <Link to={"/api/question/random"}>
             <button className="NextButtons" onClick={submitNames}>Let's go</button>
             </Link>
         </section>

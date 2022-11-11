@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping
+@RequestMapping("/api/question")
 public class QuestionController {
 
     private final QuestionService questionService;
@@ -23,7 +23,7 @@ public class QuestionController {
         return questionService.getAllQuestions();
     }
 
-    @GetMapping("/question")
+    @GetMapping("/random")
     public Question getRandomQuestion(){
         return questionService.getRandomQuestion();
     }

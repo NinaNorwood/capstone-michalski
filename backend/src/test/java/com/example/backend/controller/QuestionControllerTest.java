@@ -32,9 +32,9 @@ class QuestionControllerTest {
 
         //WHEN&THEN
         mockMvc.perform(
-                MockMvcRequestBuilders.get("/question"))
+                MockMvcRequestBuilders.get("/api/question"))
                 .andExpect(status().is(200))
                 .andExpect(MockMvcResultMatchers.content().string("""
-                        {"id":"123","category":"Funny","questionText":"What does happiness means to you?"}"""));
+                        [{"id":"123","category":"Funny","questionText":"What does happiness means to you?"}]"""));
     }
 }

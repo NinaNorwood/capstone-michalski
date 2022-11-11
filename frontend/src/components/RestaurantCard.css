@@ -1,0 +1,11 @@
+.restaurant-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.pic{
+    width: 17em;
+    height: 11em;
+    border-radius: 20px;
+    box-shadow: 5px 5px 5px #00000052;
+}
