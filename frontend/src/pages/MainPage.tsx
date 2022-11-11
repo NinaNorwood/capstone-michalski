@@ -4,12 +4,12 @@ export default function MainPage () {
 
     const navigateUser = useNavigate();
     const navToGamePage = () => {
-        navigateUser("/game")
+        navigateUser("/api/game")
     }
 
     const navigateMeet = useNavigate();
     const navToMeeting = () => {
-        navigateMeet("/search-meeting")
+        navigateMeet("/api/restaurant")
     }
 
     return(

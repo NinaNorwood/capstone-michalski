@@ -4,7 +4,7 @@ export default function FinishGamePage () {
 
     const navigateGame = useNavigate();
     const navToGame = () => {
-        navigateGame("/question")
+        navigateGame("/api/question/random")
     }
 
     const navigateHome = useNavigate();

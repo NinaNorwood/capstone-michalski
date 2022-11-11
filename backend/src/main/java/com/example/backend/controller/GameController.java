@@ -6,7 +6,7 @@ import com.example.backend.service.GameService;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping
+@RequestMapping("/api/game")
 public class GameController {
 
     private final GameService gameService;
@@ -16,17 +16,17 @@ public class GameController {
         this.gameService = userService;
     }
 
-    @PostMapping("/game")
+    @PostMapping
     public Game createGame(@RequestBody GameDTO gameDTO){
         return gameService.createGame(gameDTO);
     }
 
-    @GetMapping("/game/{gameId}")
+    @GetMapping("/{gameId}")
     public Game getGameById(@PathVariable String gameId) {
         return gameService.getGameById(gameId);
     }
 
-    @PutMapping("/game/{gameId}")
+    @PutMapping("/{gameId}")
     public Game updateGame(@PathVariable String gameId, @RequestBody Game game) {
         return gameService.updateGame(game);
     }

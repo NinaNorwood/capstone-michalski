@@ -15,14 +15,14 @@ export default function useGame() {
             currentPlayer : 0,
             players : [player1, player2]
         }
-        axios.post("/game", newGame)
+        axios.post("/api/game", newGame)
             .then((response)=> {return response.data})
             .then((data) => setGames(data))
             .catch(error => {console.log(error)})
     }
 
     const getGameById = (gameId:string) => {
-        axios.get("/game/" + gameId)
+        axios.get("/api/game/" + gameId)
             .then((response) => {return response.data})
             .then((games) => setGames(games))
             .catch(error => {console.log(error)})

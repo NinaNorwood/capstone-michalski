@@ -52,7 +52,7 @@ class GameControllerTest {
                 """;
 
         //WHEN&THEN
-        mockMvc.perform(post("/game")
+        mockMvc.perform(post("/api/game")
                 .header(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE)
                 .content("""
                         {"players"
@@ -84,7 +84,7 @@ class GameControllerTest {
                 """;
 
         //WHEN&THEN
-        this.mockMvc.perform(get("/game/123"))
+        this.mockMvc.perform(get("/api/game/123"))
             .andExpect(status().isOk())
             .andExpect(content().json(expectedJson));
     }

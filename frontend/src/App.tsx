@@ -3,14 +3,16 @@ import './App.css';
 import NewGamePage from "./pages/NewGamePage";
 import QuestionPage from "./pages/QuestionPage";
 import MainPage from "./pages/MainPage";
-import MeetingSearchPage from "./pages/MeetingSearchPage";
+import RestaurantListPage from "./pages/RestaurantListPage";
 import "@fontsource/proza-libre";
 import FinishGamePage from "./pages/FinishGamePage";
 import useGame from "./hooks/useGame";
+import useRestaurants from "./hooks/useRestaurants";
 
 function App() {
 
     const {games, createGame} = useGame();
+    const {restaurants} = useRestaurants();
 
   return (
     <div className="App">
@@ -24,9 +26,9 @@ function App() {
             <HashRouter>
                 <Routes>
                     <Route path={"/"} element={<MainPage/>}/>
-                    <Route path={"/search-meeting"} element={<MeetingSearchPage/>}/>
-                    <Route path={"/game"} element={<NewGamePage newGame={createGame}/>}/>
-                    <Route path={"/question"} element={<QuestionPage games={games}/>}/>
+                    <Route path={"/api/restaurant"} element={<RestaurantListPage restaurants={restaurants}/>}/>
+                    <Route path={"/api/game"} element={<NewGamePage newGame={createGame}/>}/>
+                    <Route path={"/api/question/random"} element={<QuestionPage games={games}/>}/>
                     <Route path={"/finish"} element={<FinishGamePage/>}/>
                 </Routes>
             </HashRouter>

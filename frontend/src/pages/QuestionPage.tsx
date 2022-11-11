@@ -22,6 +22,7 @@ export default function QuestionPage(props:QuestionPageProps) {
 
     useEffect(()=> {
         getRandomQuestion();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     return(

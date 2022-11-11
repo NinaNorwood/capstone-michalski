@@ -6,8 +6,8 @@ export default function useQuestions() {
 
     const [questions, setQuestions] = useState<Question>();
 
-    function getRandomQuestion () {
-        axios.get("/question")
+    const getRandomQuestion = () => {
+        axios.get("/api/question/random")
             .then(response => {return response.data})
             .then((questions) => {setQuestions(questions)})
             .catch(error => {console.log(error)})
