@@ -26,6 +26,9 @@ export default function NewGamePage (props:NewGameProps) {
 
     return(
         <section>
+            <Link to="/" className="Title-header">
+                <h2>Snoople</h2>
+            </Link>
             <Link to={"/"}>&lt; back</Link>
             <h3>Enter your names</h3>
             <label>Player 1

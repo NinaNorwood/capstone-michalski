@@ -41,7 +41,12 @@ export default function useGame() {
             .catch(error => {console.log(error)})
     }
 
+    const deleteGame = (gameId:string) => {
+        axios.delete("/api/game/" + gameId)
+            .catch(error => {console.log(error)})
+    }
+
     return (
-        {createGame, getGameById, games, updateGame}
+        {createGame, getGameById, games, updateGame, deleteGame}
     );
 }
