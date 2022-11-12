@@ -24,6 +24,9 @@ export default function RestaurantDetailPage(props:RestaurantDetailPageProps){
 
     return (
         <div>
+            <Link to="/" className="Title-header">
+                <h2>Snoople</h2>
+            </Link>
             <div className ="cards">
                 <Link to={"/api/restaurant"}>&lt; back</Link>
                 <div className="restaurant-card">

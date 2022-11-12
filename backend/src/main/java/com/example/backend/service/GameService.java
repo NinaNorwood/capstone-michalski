@@ -42,4 +42,8 @@ public class GameService {
         }
         return gameRepository.save(game);
     }
+
+    public void deleteGameById(String gameId) {
+        gameRepository.deleteById(gameId);
+    }
 }

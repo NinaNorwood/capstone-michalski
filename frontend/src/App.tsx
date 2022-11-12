@@ -12,16 +12,13 @@ import RestaurantDetailPage from "./pages/RestaurantDetailPage";
 
 function App() {
 
-    const {games, createGame} = useGame();
+    const {games, createGame, deleteGame} = useGame();
     const {restaurants} = useRestaurants();
 
   return (
     <div className="App">
       <header>
           <div className="App-header-top"></div>
-          <div className="Title-header">
-            <h2>Snoople</h2>
-          </div>
       </header>
         <div>
             <HashRouter>
@@ -30,8 +27,8 @@ function App() {
                     <Route path={"/api/restaurant"} element={<RestaurantListPage restaurants={restaurants}/>}/>
                     <Route path={"/api/restaurant/:restaurantId"} element={<RestaurantDetailPage restaurants={restaurants}/>}/>
                     <Route path={"/api/game"} element={<NewGamePage newGame={createGame}/>}/>
-                    <Route path={"/api/question/random"} element={<QuestionPage games={games}/>}/>
-                    <Route path={"/finish"} element={<FinishGamePage/>}/>
+                    <Route path={"/api/question/random"} element={<QuestionPage games={games} deleteGame={deleteGame}/>}/>
+                    <Route path={"/finish"} element={<FinishGamePage games={games} deleteGame={deleteGame}/>}/>
                 </Routes>
             </HashRouter>
         </div>

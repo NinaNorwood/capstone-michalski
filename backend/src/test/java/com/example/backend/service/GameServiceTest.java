@@ -50,5 +50,17 @@ class GameServiceTest {
 
         //THEN
         assertEquals(actual, expected);
-       }
+    }
+
+    @Test
+    void deleteGameById(){
+        //GIVEN
+        Game expected = new Game("","",0,9,0, new String[]{"Klaus" + "Lisa"});
+        when(gameRepository.findById("123")).thenReturn(Optional.of(expected));
+        //WHEN
+        gameService.deleteGameById("123");
+        //THEN
+        verify(gameRepository).deleteById("123");
+    }
+
 }

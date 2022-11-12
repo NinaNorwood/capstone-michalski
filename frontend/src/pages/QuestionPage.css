@@ -11,7 +11,7 @@ h4 {
     border: 5px solid #52FFB8;
     box-shadow: 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 15px;
-    height: 12em;
+    height: 13.5em;
     margin: 1em;
     padding-left: 2em;
     padding-right: 2em;
@@ -21,3 +21,40 @@ h4 {
     border-bottom: 5px solid #52FFB8;
     padding-bottom: 0.5em;
 }
+
+.quitGame{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+
+    margin: 1em;
+    border: 5px solid #52FFB8;
+    box-shadow: 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+}
+
+.quitButton {
+
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 2em;
+    width: 5em;
+
+    background: #52FFB8;
+    box-shadow: 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+
+    font-family: "Proza Libre", monospace;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 27px;
+
+    color: rgba(0, 0, 0, 0.57);
+}
+

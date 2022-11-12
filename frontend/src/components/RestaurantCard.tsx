@@ -16,7 +16,6 @@ export default function RestaurantCard(props:RestaurantCardProps) {
                     {props.restaurant.restaurantName}
                 </h3>
             </Link>
-
         </div>
     )
 
