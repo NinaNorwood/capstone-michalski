@@ -7,6 +7,7 @@ type Restaurant = {
     restaurantAddress : string,
     restaurantWebsite : string,
     restaurantLocation : string,
-    restaurantOnMap : string
+    restaurantOnMap : string,
+    restaurantGMaps : string
 }
 export default Restaurant;

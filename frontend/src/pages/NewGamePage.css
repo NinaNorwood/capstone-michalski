@@ -3,7 +3,7 @@ label {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 1em;
+    margin-bottom: 0.3em;
 }
 
 input {

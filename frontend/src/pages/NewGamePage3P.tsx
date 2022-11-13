@@ -1,35 +1,39 @@
 import {ChangeEvent, useState} from "react";
 import {Link} from "react-router-dom";
 import "./NewGamePage.css";
+import Game from "../model/Game";
 
 type NewGameProps = {
-    newGame : (player1: string, player2: string) => void
+    games : Game | undefined,
+    newGame3 : (player1: string, player2: string, player3:string) => void
 }
 
-export default function NewGamePage (props:NewGameProps) {
+export default function NewGamePage3P (props:NewGameProps) {
 
     const [player1, setPlayer1] = useState("");
     const [player2, setPlayer2] = useState("");
+    const [player3, setPlayer3] = useState("");
 
     const onNameChange1 = (event:ChangeEvent<HTMLInputElement>) => {
         setPlayer1(event.target.value)
     }
-
     const onNameChange2 = (event:ChangeEvent<HTMLInputElement>) => {
         setPlayer2(event.target.value)
     }
-
-    const submitNames = () => {
-        props.newGame(player1, player2)
+    const onNameChange3 = (event:ChangeEvent<HTMLInputElement>) => {
+        setPlayer3(event.target.value)
     }
 
+    const submitNames = () => {
+        props.newGame3(player1, player2, player3)
+    }
 
     return(
         <section>
             <Link to="/" className="Title-header">
                 <h2>Snoople</h2>
             </Link>
-            <Link to={"/"}>&lt; back</Link>
+            <Link to={"/amount"}>&lt; back</Link>
             <h3>Enter your names</h3>
             <label>Player 1
                 <input
@@ -45,8 +49,15 @@ export default function NewGamePage (props:NewGameProps) {
                     onChange={onNameChange2}
                 />
             </label>
+            <label>Player 3
+                <input
+                    value={player3}
+                    placeholder="Enter Name"
+                    onChange={onNameChange3}
+                />
+            </label>
             <Link to={"/api/question/random"}>
-            <button className="NextButtons" onClick={submitNames}>Let's go</button>
+                <button className="NextButtons" onClick={submitNames}>Let's go</button>
             </Link>
         </section>
     )

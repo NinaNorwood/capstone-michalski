@@ -21,14 +21,14 @@ class RestaurantServiceTest {
     void getAllRestaurants() {
         //GIVEN
         when(restaurantRepository.findAll()).thenReturn(
-                List.of(new Restaurant("","","","","","",""),
-                        new Restaurant("", "", "", "", "", "","")));
+                List.of(new Restaurant("","","","","","","",""),
+                        new Restaurant("", "", "", "", "", "","","")));
         //WHEN
         List<Restaurant> actual = restaurantService.getAllRestaurants();
         //THEN
         List<Restaurant> expected = List.of(
-                new Restaurant("","","","","","",""),
-                new Restaurant("", "", "", "", "", "",""));
+                new Restaurant("","","","","","","",""),
+                new Restaurant("", "", "", "", "", "","",""));
 
         verify(restaurantRepository).findAll();
         assertEquals(expected, actual);
@@ -37,7 +37,7 @@ class RestaurantServiceTest {
     @Test
     void getRestaurantById(){
         //GIVEN
-        Restaurant expected = new Restaurant("123","","","","","","");
+        Restaurant expected = new Restaurant("123","","","","","","","");
         when(restaurantRepository.findById("123")).thenReturn(Optional.of(expected));
 
         //WHEN

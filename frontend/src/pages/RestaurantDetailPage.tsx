@@ -32,11 +32,12 @@ export default function RestaurantDetailPage(props:RestaurantDetailPageProps){
                 <div className="restaurant-card">
                     <img className="pic" src={thisRestaurant.restaurantPicture} alt={thisRestaurant.restaurantName}/>
                     <h3>{thisRestaurant.restaurantName}</h3>
-                    <p>{thisRestaurant.restaurantAddress}</p>
-                    <p>{thisRestaurant.restaurantWebsite}</p>
+                    <a href={thisRestaurant.restaurantGMaps} target="_blank" rel="noopener noreferrer">{thisRestaurant.restaurantAddress}</a>
+                    <p></p>
+                    <a href={thisRestaurant.restaurantWebsite} target="_blank" rel="noopener noreferrer">{thisRestaurant.restaurantWebsite}</a>
                 </div>
             </div>
-            <button className="NextButtons">Next</button>
+            <button className="NextButtons">Snoople here</button>
         </div>
     )
 

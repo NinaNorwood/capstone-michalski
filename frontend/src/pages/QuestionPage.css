@@ -12,7 +12,7 @@ h4 {
     box-shadow: 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 15px;
     height: 13.5em;
-    margin: 1em;
+    margin: 1em 1em 3em 1em;
     padding-left: 2em;
     padding-right: 2em;
 }
@@ -28,10 +28,16 @@ h4 {
     justify-content: flex-end;
     align-items: center;
 
-    margin: 1em;
+    z-index: 500;
+    position: absolute;
+    top: 15%;
+    background-color: white;
+    padding: 0.8em;
+    margin: 2em;
     border: 5px solid #52FFB8;
     box-shadow: 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 15px;
+    transition: background 1s;
 }
 
 .quitButton {
@@ -43,7 +49,7 @@ h4 {
     justify-content: center;
     align-items: center;
     height: 2em;
-    width: 5em;
+    width: 6em;
 
     background: #52FFB8;
     box-shadow: 4px 4px rgba(0, 0, 0, 0.25);
@@ -56,5 +62,19 @@ h4 {
     line-height: 27px;
 
     color: rgba(0, 0, 0, 0.57);
+}
+
+.Test {
+    position: relative;
+}
+
+.grey{
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    background-color: rgba(121, 116, 116, 0.5);
+    position: absolute;
+    z-index: 100;
+
 }
 

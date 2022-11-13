@@ -22,7 +22,7 @@
 
 .NextButtons {
     margin-left: 4em;
-    margin-top: 2em;
+    margin-top: 1em;
     margin-bottom: 2em;
     display: flex;
     flex-direction: column;
@@ -42,4 +42,31 @@
     line-height: 27px;
 
     color: rgba(0, 0, 0, 0.57);
+}
+
+.AmountButtons {
+
+    margin: 0.8em;
+    justify-content: center;
+    align-items: center;
+    height: 3em;
+    width: 6.8em;
+
+    background: #52FFB8;
+    box-shadow: 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+
+    font-family: "Proza Libre", monospace;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 27px;
+
+    color: rgba(0, 0, 0, 0.57);
+}
+
+.AmountTable {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
