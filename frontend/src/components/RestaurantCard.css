@@ -4,9 +4,17 @@
     margin: 1em 1em;
 }
 
-.pic{
+.picList{
     width: 17em;
     height: 11em;
+    border-radius: 20px;
+    box-shadow: 5px 5px 5px #00000052;
+}
+
+.pic{
+    margin: 1em;
+    width: 14em;
+    height: 9em;
     border-radius: 20px;
     box-shadow: 5px 5px 5px #00000052;
 }

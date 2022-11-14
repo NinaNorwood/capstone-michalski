@@ -28,13 +28,13 @@ class RestaurantControllerTest {
     @Test
     void getAllRestaurants() throws Exception {
         //GIVEN
-        Restaurant testRestaurant = new Restaurant("","","","","","","");
+        Restaurant testRestaurant = new Restaurant("","","","","","","","");
         restaurantRepository.save(testRestaurant);
         //WHEN&THEN
         mockMvc.perform(MockMvcRequestBuilders.get("/api/restaurant"))
                 .andExpect(status().is(200))
                         .andExpect(content().string("""
-                                [{"restaurantId":"","restaurantName":"","restaurantPicture":"","restaurantAddress":"","restaurantWebsite":"","restaurantLocation":"","restaurantOnMap":""}]"""));
+                                [{"restaurantId":"","restaurantName":"","restaurantPicture":"","restaurantAddress":"","restaurantWebsite":"","restaurantLocation":"","restaurantOnMap":"","restaurantGMaps":""}]"""));
 
     }
 
@@ -42,7 +42,7 @@ class RestaurantControllerTest {
     @Test
     void getRestaurantById() throws Exception {
         //GIVEN
-        restaurantRepository.save(new Restaurant("123","","","","","",""));
+        restaurantRepository.save(new Restaurant("123","","","","","","",""));
 
         String expectedJson = """
                 {
@@ -52,7 +52,8 @@ class RestaurantControllerTest {
                 "restaurantAddress":"",
                 "restaurantWebsite":"",
                 "restaurantLocation":"",
-                "restaurantOnMap":""
+                "restaurantOnMap":"",
+                "restaurantGMaps":""
                 }
                 """;
 

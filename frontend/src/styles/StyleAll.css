@@ -1,4 +1,9 @@
 
+a{
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.74);
+}
+
 h2 {
     font-family: "Proza Libre", monospace;
     font-style: normal;

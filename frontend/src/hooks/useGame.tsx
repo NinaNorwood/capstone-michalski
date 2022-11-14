@@ -7,15 +7,71 @@ export default function useGame() {
 
     const [games, setGames] = useState();
 
-    const createGame = (player1:string, player2:string) => {
-        let newGame:GameDTO = {
+    const createGame2P = (player1:string, player2:string) => {
+        let newGame2:GameDTO = {
             currentQuestion : "",
             round : 0,
             maxRounds : 9,
             currentPlayer : 0,
             players : [player1, player2]
         }
-        axios.post("/api/game", newGame)
+        axios.post("/api/game", newGame2)
+            .then((response)=> {return response.data})
+            .then((data) => setGames(data))
+            .catch(error => {console.log(error)})
+    }
+
+    const createGame3P = (player1:string, player2:string, player3:string) => {
+        let newGame3:GameDTO = {
+            currentQuestion : "",
+            round : 0,
+            maxRounds : 14,
+            currentPlayer : 0,
+            players : [player1, player2, player3]
+        }
+        axios.post("/api/game", newGame3)
+            .then((response)=> {return response.data})
+            .then((data) => setGames(data))
+            .catch(error => {console.log(error)})
+    }
+
+    const createGame4P = (player1:string, player2:string, player3:string, player4:string) => {
+        let newGame4:GameDTO = {
+            currentQuestion : "",
+            round : 0,
+            maxRounds : 19,
+            currentPlayer : 0,
+            players : [player1, player2, player3, player4]
+        }
+        axios.post("/api/game", newGame4)
+            .then((response)=> {return response.data})
+            .then((data) => setGames(data))
+            .catch(error => {console.log(error)})
+    }
+
+    const createGame5P = (player1:string, player2:string, player3:string, player4:string, player5:string) => {
+        let newGame5:GameDTO = {
+            currentQuestion : "",
+            round : 0,
+            maxRounds : 24,
+            currentPlayer : 0,
+            players : [player1, player2, player3, player4, player5]
+        }
+        axios.post("/api/game", newGame5)
+            .then((response)=> {return response.data})
+            .then((data) => setGames(data))
+            .catch(error => {console.log(error)})
+    }
+
+    const createGame6P = (player1:string, player2:string, player3:string, player4:string, player5:string, player6:string) => {
+        let newGame6:GameDTO = {
+            currentQuestion : "",
+            round : 0,
+            maxRounds : 29,
+            currentPlayer : 0,
+            players : [player1, player2, player3, player4, player5, player6]
+        }
+        axios.post("/api/game", newGame6)
             .then((response)=> {return response.data})
             .then((data) => setGames(data))
             .catch(error => {console.log(error)})
@@ -47,6 +103,6 @@ export default function useGame() {
     }
 
     return (
-        {createGame, getGameById, games, updateGame, deleteGame}
+        {createGame2P, createGame3P, createGame4P, createGame5P, createGame6P, getGameById, games, updateGame, deleteGame}
     );
 }

@@ -6,7 +6,7 @@ export default function MainPage () {
 
     const navigateUser = useNavigate();
     const navToGamePage = () => {
-        navigateUser("/api/game")
+        navigateUser("/amount")
     }
 
     const navigateMeet = useNavigate();

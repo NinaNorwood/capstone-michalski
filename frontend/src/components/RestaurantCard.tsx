@@ -11,7 +11,7 @@ export default function RestaurantCard(props:RestaurantCardProps) {
     return (
         <div className="restaurant-card">
             <Link to={"/api/restaurant/" + props.restaurant.restaurantId}>
-                <img className="pic" src={props.restaurant.restaurantPicture} alt={props.restaurant.restaurantName}/>
+                <img className="picList" src={props.restaurant.restaurantPicture} alt={props.restaurant.restaurantName}/>
                 <h3>
                     {props.restaurant.restaurantName}
                 </h3>

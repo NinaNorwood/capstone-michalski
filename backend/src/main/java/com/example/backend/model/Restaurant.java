@@ -22,4 +22,5 @@ public class Restaurant {
     private String restaurantWebsite;
     private String restaurantLocation;
     private String restaurantOnMap;
+    private String restaurantGMaps;
 }
