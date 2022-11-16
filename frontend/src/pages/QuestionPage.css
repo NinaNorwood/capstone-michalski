@@ -41,7 +41,6 @@ h4 {
 }
 
 .quitButton {
-
     margin-top: 0.5em;
     margin-bottom: 0.5em;
     display: flex;
@@ -64,10 +63,6 @@ h4 {
     color: rgba(0, 0, 0, 0.57);
 }
 
-.Test {
-    position: relative;
-}
-
 .grey{
     width: 100vw;
     height: 100vh;
@@ -75,6 +70,12 @@ h4 {
     background-color: rgba(121, 116, 116, 0.5);
     position: absolute;
     z-index: 100;
+}
 
+.lastRound{
+    background-color: #e0e79a;
+    padding-right: 1em;
+    margin: 0.5em;
+    text-align: end;
 }
 

@@ -15,10 +15,14 @@ export default function MainPage () {
     }
 
     return(
-        <section>
+        <section className="pageLayout">
             <Link to="/" className="Title-header">
                 <h2>Snoople</h2>
             </Link>
+            <h3>Welcome 👋</h3>
+            <div className="chooseMode">
+                <h4>Choose your mode</h4>
+            </div>
             <button className="MainButtons" onClick={navToGamePage}>Snoople Now</button>
             <button className="MainButtons" onClick={navToMeeting}>Snoople Meet</button>
         </section>

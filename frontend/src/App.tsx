@@ -9,11 +9,8 @@ import useGame from "./hooks/useGame";
 import useRestaurants from "./hooks/useRestaurants";
 import RestaurantDetailPage from "./pages/RestaurantDetailPage";
 import PlayerAmountPage from "./pages/PlayerAmountPage";
-import NewGamePage2P from "./pages/NewGamePage2P";
-import NewGamePage6P from "./pages/NewGamePage6P";
-import NewGamePage5P from "./pages/NewGamePage5P";
-import NewGamePage4P from "./pages/NewGamePage4P";
-import NewGamePage3P from "./pages/NewGamePage3P";
+import NewGamePage from "./pages/NewGamePage";
+import RestaurantTimePage from "./pages/RestaurantTimePage";
 
 function App() {
 
@@ -32,11 +29,8 @@ function App() {
                     <Route path={"/amount"} element={<PlayerAmountPage/>}/>
                     <Route path={"/api/restaurant"} element={<RestaurantListPage restaurants={restaurants}/>}/>
                     <Route path={"/api/restaurant/:restaurantId"} element={<RestaurantDetailPage restaurants={restaurants}/>}/>
-                    <Route path={"/api/game2"} element={<NewGamePage2P games={games} newGame2={createGame2P}/>}/>
-                    <Route path={"/api/game3"} element={<NewGamePage3P games={games} newGame3={createGame3P}/>}/>
-                    <Route path={"/api/game4"} element={<NewGamePage4P games={games} newGame4={createGame4P}/>}/>
-                    <Route path={"/api/game5"} element={<NewGamePage5P games={games} newGame5={createGame5P}/>}/>
-                    <Route path={"/api/game6"} element={<NewGamePage6P games={games} newGame6={createGame6P}/>}/>
+                    <Route path={"/api/restaurant/:restaurantId/time"} element={<RestaurantTimePage/>}/>
+                    <Route path={"/api/game"} element={<NewGamePage games={games} newGame2={createGame2P} newGame3={createGame3P} newGame4={createGame4P} newGame5={createGame5P} newGame6={createGame6P}/>}/>
                     <Route path={"/api/question/random"} element={<QuestionPage games={games} deleteGame={deleteGame}/>}/>
                     <Route path={"/finish"} element={<FinishGamePage games={games} deleteGame={deleteGame}/>}/>
                 </Routes>
