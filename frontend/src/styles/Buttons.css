@@ -21,9 +21,7 @@
 }
 
 .NextButtons {
-    margin-left: 4em;
-    margin-top: 1em;
-    margin-bottom: 2em;
+    margin: 1em;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -45,7 +43,6 @@
 }
 
 .AmountButtons {
-
     margin: 0.8em;
     justify-content: center;
     align-items: center;
@@ -66,7 +63,52 @@
 }
 
 .AmountTable {
+    padding: 0.7em;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+}
+
+.TimeButtons {
+    margin: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 4em;
+    width: 20em;
+
+    background: #52FFB8;
+    box-shadow: 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+
+    font-family: "Proza Libre", monospace;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 27px;
+
+    color: rgba(0, 0, 0, 0.57);
+}
+
+.NoTimeButtons {
+    margin: 3em 1em 1em 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 4em;
+    width: 20em;
+
+    background: #F5FF90;
+    box-shadow: 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+
+    font-family: "Proza Libre", monospace;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 27px;
+
+    color: rgba(0, 0, 0, 0.57);
 }

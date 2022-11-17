@@ -44,7 +44,7 @@ export default function QuestionPage(props:QuestionPageProps) {
     console.log(props.games?.players.length)
 
     return(
-        <div className="Test">
+        <div className="pageLayout">
             <div onClick={() => setQuitRound(!quitRound)} className="Title-header">
                 <h2 >Snoople</h2>
             </div>
@@ -58,21 +58,30 @@ export default function QuestionPage(props:QuestionPageProps) {
                 <button className="quitButton" onClick={() => setQuitRound(!quitRound)}>Not yet</button>
             </div>}
 
-            {round < (props.games?.maxRounds as number)  && <article>
-                <section className="QuestionBoxes">
-                    <h4 className="QuestionBoxes-Top">Question for {props.games?.players[turn]} </h4>
-                    <h4>{questions?.questionText}</h4>
-                </section>
-                <button className="NextButtons" onClick={nextRound}>Next</button>
-            </article>}
+            {round < (props.games?.maxRounds as number)  &&
+                <div>
+                    {round === ((props.games?.maxRounds as number)-1) &&
+                        <div className="lastRound"><h4>Last round!</h4></div>}
+                    <article className="pageLayout">
+                    <section className="QuestionBoxes">
+                        <h4 className="QuestionBoxes-Top">Question for {props.games?.players[turn]} </h4>
+                        <h4>{questions?.questionText}</h4>
+                    </section>
+                    <button className="NextButtons" onClick={nextRound}>Next</button>
+                </article>
+                </div>}
 
-            {round === (props.games?.maxRounds as number) && <article>
-                <section className="QuestionBoxes">
-                    <h4 className="QuestionBoxes-Top">Question for {props.games?.players[turn]}</h4>
-                    <h4>{questions?.questionText}</h4>
-                </section>
-                <button className="NextButtons" onClick={navToFinish}>Next</button>
-            </article>}
+            {round === (props.games?.maxRounds as number) &&
+                <div>
+                    <div className="lastRound"><h4>Last round!</h4></div>
+                    <article className="pageLayout">
+                    <section className="QuestionBoxes">
+                        <h4 className="QuestionBoxes-Top">Question for {props.games?.players[turn]}</h4>
+                        <h4>{questions?.questionText}</h4>
+                    </section>
+                    <button className="NextButtons" onClick={navToFinish}>Next</button>
+                </article>
+                </div>}
         </div>
     )
 

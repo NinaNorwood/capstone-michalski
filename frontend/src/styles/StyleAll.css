@@ -28,6 +28,22 @@ h4 {
     line-height: 27px;
 }
 
+.chooseMode{
+    background-color: rgba(82, 255, 184, 0.4);
+    padding: 0.3em;
+    margin-top: 1.5em;
+    margin-bottom: 2.2em;
+    width: 100vw;
+}
+
+.pageLayout{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
 
 
 

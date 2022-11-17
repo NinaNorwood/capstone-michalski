@@ -23,11 +23,11 @@ export default function RestaurantDetailPage(props:RestaurantDetailPageProps){
     }
 
     return (
-        <div>
+        <div className="pageLayout">
             <Link to="/" className="Title-header">
                 <h2>Snoople</h2>
             </Link>
-            <div className ="cards">
+            <div>
                 <Link to={"/api/restaurant"}>&lt; back</Link>
                 <div className="restaurant-card">
                     <img className="pic" src={thisRestaurant.restaurantPicture} alt={thisRestaurant.restaurantName}/>
@@ -37,7 +37,9 @@ export default function RestaurantDetailPage(props:RestaurantDetailPageProps){
                     <a href={thisRestaurant.restaurantWebsite} target="_blank" rel="noopener noreferrer">{thisRestaurant.restaurantWebsite}</a>
                 </div>
             </div>
-            <button className="NextButtons">Snoople here</button>
+            <Link to="/api/restaurant/:restaurantId/time">
+                <button className="NextButtons">Snoople here</button>
+            </Link>
         </div>
     )
 

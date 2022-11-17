@@ -14,7 +14,7 @@ export default function FinishGamePage (props:FinishGamePageProps) {
     }
 
     return(
-        <section>
+        <section className="pageLayout">
             <Link to="/" className="Title-header">
                 <h2>Snoople</h2>
             </Link>
