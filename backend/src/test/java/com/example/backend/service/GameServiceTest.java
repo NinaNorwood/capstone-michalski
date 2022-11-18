@@ -13,15 +13,15 @@ import static org.mockito.Mockito.*;
 class GameServiceTest {
 
     GameRepository gameRepository = mock(GameRepository.class);
-    GameIdService gameIdService = mock(GameIdService.class);
-    GameService gameService = new GameService(gameRepository, gameIdService);
+    IdService idService = mock(IdService.class);
+    GameService gameService = new GameService(gameRepository, idService);
 
     @Test
     void addName() {
         //GIVEN
         GameDTO gameDTO = new GameDTO("",0,9,0, new String[]{"Klaus" + "Lisa"});
         Game expected = new Game("123","",0,9,0, new String[]{"Klaus" + "Lisa"});
-        when(gameIdService.generateID()).thenReturn("123");
+        when(idService.generateID()).thenReturn("123");
         when(gameRepository.save(any())).thenReturn(
                 Game.builder()
                         .gameId("123")

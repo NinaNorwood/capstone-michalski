@@ -11,11 +11,13 @@ import RestaurantDetailPage from "./pages/RestaurantDetailPage";
 import PlayerAmountPage from "./pages/PlayerAmountPage";
 import NewGamePage from "./pages/NewGamePage";
 import RestaurantTimePage from "./pages/RestaurantTimePage";
+import useMeetings from "./hooks/useMeetings";
 
 function App() {
 
     const {games, createGame2P, createGame3P, createGame4P, createGame5P, createGame6P, deleteGame} = useGame();
     const {restaurants} = useRestaurants();
+    const {meetings} = useMeetings();
 
   return (
     <div className="App">
@@ -29,7 +31,7 @@ function App() {
                     <Route path={"/amount"} element={<PlayerAmountPage/>}/>
                     <Route path={"/api/restaurant"} element={<RestaurantListPage restaurants={restaurants}/>}/>
                     <Route path={"/api/restaurant/:restaurantId"} element={<RestaurantDetailPage restaurants={restaurants}/>}/>
-                    <Route path={"/api/restaurant/:restaurantId/time"} element={<RestaurantTimePage/>}/>
+                    <Route path={"/api/meetings"} element={<RestaurantTimePage meetings={meetings}/>}/>
                     <Route path={"/api/game"} element={<NewGamePage games={games} newGame2={createGame2P} newGame3={createGame3P} newGame4={createGame4P} newGame5={createGame5P} newGame6={createGame6P}/>}/>
                     <Route path={"/api/question/random"} element={<QuestionPage games={games} deleteGame={deleteGame}/>}/>
                     <Route path={"/finish"} element={<FinishGamePage games={games} deleteGame={deleteGame}/>}/>

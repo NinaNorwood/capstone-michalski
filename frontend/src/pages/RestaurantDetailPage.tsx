@@ -37,7 +37,7 @@ export default function RestaurantDetailPage(props:RestaurantDetailPageProps){
                     <a href={thisRestaurant.restaurantWebsite} target="_blank" rel="noopener noreferrer">{thisRestaurant.restaurantWebsite}</a>
                 </div>
             </div>
-            <Link to="/api/restaurant/:restaurantId/time">
+            <Link to={"/api/meetings?restoId=" + thisRestaurant.restaurantId}>
                 <button className="NextButtons">Snoople here</button>
             </Link>
         </div>
