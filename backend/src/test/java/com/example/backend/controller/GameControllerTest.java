@@ -2,7 +2,7 @@ package com.example.backend.controller;
 
 import com.example.backend.model.Game;
 import com.example.backend.repository.GameRepository;
-import com.example.backend.service.GameIdService;
+import com.example.backend.service.IdService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -29,13 +29,13 @@ class GameControllerTest {
     private GameRepository gameRepository;
 
     @MockBean
-    private GameIdService gameIdService;
+    private IdService idService;
 
     @DirtiesContext
     @Test
     void addName() throws Exception {
         //GIVEN
-        when(gameIdService.generateID()).thenReturn("123");
+        when(idService.generateID()).thenReturn("123");
 
         gameRepository.save(new Game("123",null,null,null,null, new String[]{"Klaus", "Lisa"}));
 

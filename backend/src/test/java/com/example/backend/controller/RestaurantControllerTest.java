@@ -35,7 +35,6 @@ class RestaurantControllerTest {
                 .andExpect(status().is(200))
                         .andExpect(content().string("""
                                 [{"restaurantId":"","restaurantName":"","restaurantPicture":"","restaurantAddress":"","restaurantWebsite":"","restaurantLocation":"","restaurantOnMap":"","restaurantGMaps":""}]"""));
-
     }
 
     @DirtiesContext

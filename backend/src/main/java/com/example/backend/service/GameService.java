@@ -11,16 +11,16 @@ import java.util.NoSuchElementException;
 public class GameService {
 
     private final GameRepository gameRepository;
-    private final GameIdService gameIdService;
+    private final IdService idService;
 
-    public GameService(GameRepository gameRepository, GameIdService gameIdService) {
+    public GameService(GameRepository gameRepository, IdService idService) {
         this.gameRepository = gameRepository;
-        this.gameIdService = gameIdService;
+        this.idService = idService;
     }
 
     public Game createGame(GameDTO game) {
         Game gameFor2 = Game.builder()
-                .gameId(gameIdService.generateID())
+                .gameId(idService.generateID())
                 .currentQuestionId(game.getCurrentQuestion())
                 .round(game.getRound())
                 .maxRounds(game.getMaxRounds())
