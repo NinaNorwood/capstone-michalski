@@ -18,7 +18,7 @@ class QuestionServiceTest {
     private final QuestionService questionService = new QuestionService(questionRepository);
 
     @Test
-    void getAllQuestions() {
+    void getAllQuestions_shouldReturn_listOfQuestions() {
         //GIVEN
         when(questionRepository.findAll()).thenReturn(
                 List.of(new Question("123", "Funny", "What does happiness means to you?"),

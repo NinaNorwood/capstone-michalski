@@ -17,7 +17,7 @@ class GameServiceTest {
     GameService gameService = new GameService(gameRepository, idService);
 
     @Test
-    void addName() {
+    void addNames_shouldReturn_newGame() {
         //GIVEN
         GameDTO gameDTO = new GameDTO("",0,9,0, new String[]{"Klaus" + "Lisa"});
         Game expected = new Game("123","",0,9,0, new String[]{"Klaus" + "Lisa"});
@@ -40,7 +40,7 @@ class GameServiceTest {
     }
 
     @Test
-    void getGameById(){
+    void getGameById_shouldReturn_oneGameById(){
         //GIVEN
         Game expected = new Game("","",0,9,0, new String[]{"Klaus" + "Lisa"});
         when(gameRepository.findById("123")).thenReturn(Optional.of(expected));
@@ -53,7 +53,7 @@ class GameServiceTest {
     }
 
     @Test
-    void deleteGameById(){
+    void deleteGameById_shouldDeleteGame(){
         //GIVEN
         Game expected = new Game("","",0,9,0, new String[]{"Klaus" + "Lisa"});
         when(gameRepository.findById("123")).thenReturn(Optional.of(expected));

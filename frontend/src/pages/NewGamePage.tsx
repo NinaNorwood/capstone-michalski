@@ -1,10 +1,8 @@
 import {ChangeEvent, useState} from "react";
 import {Link, useSearchParams} from "react-router-dom";
 import "./NewGamePage.css";
-import Game from "../model/Game";
 
 type NewGameProps = {
-    games : Game | undefined,
     newGame2 : (player1: string, player2: string) => void
     newGame3 : (player1: string, player2: string, player3:string) => void
     newGame4 : (player1: string, player2: string, player3:string, player4:string) => void

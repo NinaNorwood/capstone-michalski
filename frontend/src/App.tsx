@@ -12,12 +12,15 @@ import PlayerAmountPage from "./pages/PlayerAmountPage";
 import NewGamePage from "./pages/NewGamePage";
 import RestaurantTimePage from "./pages/RestaurantTimePage";
 import useMeetings from "./hooks/useMeetings";
+import NewMeetingPage from "./pages/NewMeetingPage";
+import EmailConfirmation from "./pages/EmailConfirmation";
+import Confirmation from "./pages/ConfirmationPage";
 
 function App() {
 
     const {games, createGame2P, createGame3P, createGame4P, createGame5P, createGame6P, deleteGame} = useGame();
     const {restaurants} = useRestaurants();
-    const {meetings} = useMeetings();
+    const {meetings, addMeeting} = useMeetings();
 
   return (
     <div className="App">
@@ -32,7 +35,10 @@ function App() {
                     <Route path={"/api/restaurant"} element={<RestaurantListPage restaurants={restaurants}/>}/>
                     <Route path={"/api/restaurant/:restaurantId"} element={<RestaurantDetailPage restaurants={restaurants}/>}/>
                     <Route path={"/api/meetings"} element={<RestaurantTimePage meetings={meetings}/>}/>
-                    <Route path={"/api/game"} element={<NewGamePage games={games} newGame2={createGame2P} newGame3={createGame3P} newGame4={createGame4P} newGame5={createGame5P} newGame6={createGame6P}/>}/>
+                    <Route path={"/api/meetings/add"} element={<NewMeetingPage newMeeting={addMeeting}/>}/>
+                    <Route path={"/api/confirmation"} element={<Confirmation/>}/>
+                    <Route path={"/api/email-confirmation"} element={<EmailConfirmation/>}/>
+                    <Route path={"/api/game"} element={<NewGamePage newGame2={createGame2P} newGame3={createGame3P} newGame4={createGame4P} newGame5={createGame5P} newGame6={createGame6P}/>}/>
                     <Route path={"/api/question/random"} element={<QuestionPage games={games} deleteGame={deleteGame}/>}/>
                     <Route path={"/finish"} element={<FinishGamePage games={games} deleteGame={deleteGame}/>}/>
                 </Routes>

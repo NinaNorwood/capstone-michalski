@@ -30,7 +30,9 @@ export default function RestaurantTimePage(props:RestaurantTimePageProps) {
                     .map((meeting) =>
                 <MeetingCard key={meeting.meetingId} meeting={meeting}/>)}
             </div>
-            <button className="NoTimeButtons">None of this dates fit for me</button>
+            <Link to={"/api/meetings/add?restoId=" + thisRestaurant.get("restoId")!}>
+              <button className="NoTimeButtons">None of this dates fit for me</button>
+            </Link>
         </div>
 
 
