@@ -25,7 +25,7 @@ class QuestionControllerTest {
 
     @DirtiesContext
     @Test
-    void getAllQuestions() throws Exception {
+    void getAllQuestions_shouldReturn_listOfQuestions() throws Exception {
         //GIVEN
         Question testQuestion = new Question("123", "Funny", "What does happiness means to you?");
         questionRepository.save(testQuestion);

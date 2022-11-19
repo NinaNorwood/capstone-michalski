@@ -26,27 +26,27 @@ class RestaurantControllerTest {
 
     @DirtiesContext
     @Test
-    void getAllRestaurants() throws Exception {
+    void getAllRestaurants_shouldReturn_listOfRestaurants() throws Exception {
         //GIVEN
-        Restaurant testRestaurant = new Restaurant("","","","","","","","");
+        Restaurant testRestaurant = new Restaurant("123","Italian Restaurant","","","","","","");
         restaurantRepository.save(testRestaurant);
         //WHEN&THEN
         mockMvc.perform(MockMvcRequestBuilders.get("/api/restaurant"))
                 .andExpect(status().is(200))
                         .andExpect(content().string("""
-                                [{"restaurantId":"","restaurantName":"","restaurantPicture":"","restaurantAddress":"","restaurantWebsite":"","restaurantLocation":"","restaurantOnMap":"","restaurantGMaps":""}]"""));
+                                [{"restaurantId":"123","restaurantName":"Italian Restaurant","restaurantPicture":"","restaurantAddress":"","restaurantWebsite":"","restaurantLocation":"","restaurantOnMap":"","restaurantGMaps":""}]"""));
     }
 
     @DirtiesContext
     @Test
-    void getRestaurantById() throws Exception {
+    void getRestaurantById_shouldReturn_oneRestaurantById() throws Exception {
         //GIVEN
-        restaurantRepository.save(new Restaurant("123","","","","","","",""));
+        restaurantRepository.save(new Restaurant("123","Italian Restaurant","","","","","",""));
 
         String expectedJson = """
                 {
                 "restaurantId":"123",
-                "restaurantName":"",
+                "restaurantName":"Italian Restaurant",
                 "restaurantPicture":"",
                 "restaurantAddress":"",
                 "restaurantWebsite":"",

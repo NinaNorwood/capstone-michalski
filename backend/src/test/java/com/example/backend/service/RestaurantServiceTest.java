@@ -18,26 +18,26 @@ class RestaurantServiceTest {
     private final RestaurantService restaurantService = new RestaurantService(restaurantRepository);
 
     @Test
-    void getAllRestaurants() {
+    void getAllRestaurants_shouldReturn_listOfRestaurants() {
         //GIVEN
         when(restaurantRepository.findAll()).thenReturn(
-                List.of(new Restaurant("","","","","","","",""),
-                        new Restaurant("", "", "", "", "", "","","")));
+                List.of(new Restaurant("123","Italian Restaurant","","","","","",""),
+                        new Restaurant("456", "Spanish Restaurant", "", "", "", "","","")));
         //WHEN
         List<Restaurant> actual = restaurantService.getAllRestaurants();
         //THEN
         List<Restaurant> expected = List.of(
-                new Restaurant("","","","","","","",""),
-                new Restaurant("", "", "", "", "", "","",""));
+                new Restaurant("123","Italian Restaurant","","","","","",""),
+                new Restaurant("456", "Spanish Restaurant", "", "", "", "","",""));
 
         verify(restaurantRepository).findAll();
         assertEquals(expected, actual);
     }
 
     @Test
-    void getRestaurantById(){
+    void getRestaurantById_shouldReturn_oneRestaurantById(){
         //GIVEN
-        Restaurant expected = new Restaurant("123","","","","","","","");
+        Restaurant expected = new Restaurant("123","Italian Restaurant","","","","","","");
         when(restaurantRepository.findById("123")).thenReturn(Optional.of(expected));
 
         //WHEN

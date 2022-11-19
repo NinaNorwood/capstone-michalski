@@ -19,7 +19,7 @@ public class GameService {
     }
 
     public Game createGame(GameDTO game) {
-        Game gameFor2 = Game.builder()
+        Game newGame = Game.builder()
                 .gameId(idService.generateID())
                 .currentQuestionId(game.getCurrentQuestion())
                 .round(game.getRound())
@@ -27,9 +27,8 @@ public class GameService {
                 .currentPlayer(game.getCurrentPlayer())
                 .players(game.getPlayers())
                 .build();
-        return gameRepository.save(gameFor2);
+        return gameRepository.save(newGame);
     }
-
 
     public Game getGameById(String gameId) {
         return gameRepository.findById(gameId)

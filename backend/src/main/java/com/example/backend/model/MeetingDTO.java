@@ -14,7 +14,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class MeetingDTO {
 
     private String meetingLocation;
-    private String meetingDay;
+    private String meetingDate;
     private String meetingTime;
     private String userEmail1;
     private String userEmail2;

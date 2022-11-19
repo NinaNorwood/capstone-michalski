@@ -33,7 +33,7 @@ class GameControllerTest {
 
     @DirtiesContext
     @Test
-    void addName() throws Exception {
+    void addName_shouldReturn_newMeeting() throws Exception {
         //GIVEN
         when(idService.generateID()).thenReturn("123");
 
@@ -67,7 +67,7 @@ class GameControllerTest {
 
     @DirtiesContext
     @Test
-    void getGameById() throws Exception {
+    void getGameById_shouldReturn_oneGameById() throws Exception {
         //GIVEN
         gameRepository.save(new Game("123",null,null,null,null, new String[]{"Klaus", "Lisa"}));
 
@@ -90,7 +90,7 @@ class GameControllerTest {
 
     @DirtiesContext
     @Test
-    void deleteGameById() throws Exception {
+    void deleteGameById_shouldDeleteGame() throws Exception {
         //GIVEN
         gameRepository.save(new Game("123",null,null,null,null, new String[]{"Klaus", "Lisa"}));
         //WHEN&THEN
