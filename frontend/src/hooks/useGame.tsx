@@ -11,7 +11,7 @@ export default function useGame() {
         let newGame2:GameDTO = {
             currentQuestion : "",
             round : 0,
-            maxRounds : 9,
+            maxRounds : 5,
             currentPlayer : 0,
             players : [player1, player2]
         }

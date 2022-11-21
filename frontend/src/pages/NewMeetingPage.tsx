@@ -1,5 +1,6 @@
 import {ChangeEvent, useState} from "react";
 import {Link, useNavigate, useSearchParams} from "react-router-dom";
+import Header from "../components/Header";
 
 type NewMeetingPageProps = {
     newMeeting: (meetingLocation:string, userEmailOne:string) => void
@@ -28,14 +29,10 @@ export default function NewMeetingPage(props:NewMeetingPageProps){
     }
 
     return(
-            <section className="pageLayout">
-                <Link to="/" className="Title-header">
-                    <h2>Snoople</h2>
-                </Link>
+        <div>
+            <Header/>
+        <section className="pageLayout">
                 <h4 onClick={navToBack}>&lt; back</h4>
-
-
-
                 <h3 className="pageLayout2">Enter your E-Mail address, so we can come back to you if we find another snoople</h3>
                 <label>E-Mail
                     <input
@@ -47,7 +44,7 @@ export default function NewMeetingPage(props:NewMeetingPageProps){
                     <button className="NextButtons" onClick={submitNames}>Send</button>
                 </Link>
             </section>
-
+        </div>
     )
 
 }

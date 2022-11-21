@@ -1,6 +1,7 @@
 import {ChangeEvent, useState} from "react";
 import {Link, useSearchParams} from "react-router-dom";
 import "./NewGamePage.css";
+import Header from "../components/Header";
 
 type NewGameProps = {
     newGame2 : (player1: string, player2: string) => void
@@ -54,98 +55,98 @@ export default function NewGamePage (props:NewGameProps) {
     }
 
     return(
-        <section className="pageLayout">
-            <Link to="/" className="Title-header">
-                <h2>Snoople</h2>
-            </Link>
-            <Link to={"/amount"}>&lt; back</Link>
-            <h3>Enter your names</h3>
-            <label>Player 1
-                <input
-                    value={player1}
-                    placeholder="Enter Name"
-                    onChange={onNameChange1}/>
-            </label>
-            <label>Player 2
-                <input
-                    value={player2}
-                    placeholder="Enter Name"
-                    onChange={onNameChange2}/>
-            </label>
-            {buttonValue.get("playerCount") === "3"  &&
-                <label>Player 3
-                <input
-                    value={player3}
-                    placeholder="Enter Name"
-                    onChange={onNameChange3}/>
-            </label>}
-            {buttonValue.get("playerCount") === "4"  &&
-                <div>
-                    <label>Player 3
-                        <input
-                            value={player3}
-                            placeholder="Enter Name"
-                            onChange={onNameChange3}/>
-                    </label>
-                    <label>Player 4
+        <div>
+            <Header/>
+            <section className="pageLayout">
+                <Link to={"/amount"}>&lt; back</Link>
+                <h3>Enter your names</h3>
+                <label>Player 1
                     <input
-                        value={player4}
+                        value={player1}
                         placeholder="Enter Name"
-                        onChange={onNameChange4}/>
+                        onChange={onNameChange1}/>
                 </label>
-                </div>}
-            {buttonValue.get("playerCount") === "5"  &&
-                <div>
+                <label>Player 2
+                    <input
+                        value={player2}
+                        placeholder="Enter Name"
+                        onChange={onNameChange2}/>
+                </label>
+                {buttonValue.get("playerCount") === "3"  &&
                     <label>Player 3
-                        <input
-                            value={player3}
-                            placeholder="Enter Name"
-                            onChange={onNameChange3}/>
-                    </label>
-                    <label>Player 4
+                    <input
+                        value={player3}
+                        placeholder="Enter Name"
+                        onChange={onNameChange3}/>
+                </label>}
+                {buttonValue.get("playerCount") === "4"  &&
+                    <div>
+                        <label>Player 3
+                            <input
+                                value={player3}
+                                placeholder="Enter Name"
+                                onChange={onNameChange3}/>
+                        </label>
+                        <label>Player 4
                         <input
                             value={player4}
                             placeholder="Enter Name"
                             onChange={onNameChange4}/>
                     </label>
-                    <label>Player 5
-                        <input
-                            value={player5}
-                            placeholder="Enter Name"
-                            onChange={onNameChange5}/>
-                    </label>
-                </div>}
-            {buttonValue.get("playerCount") === "6"  &&
-                <div>
-                    <label>Player 3
-                        <input
-                            value={player3}
-                            placeholder="Enter Name"
-                            onChange={onNameChange3}/>
-                    </label>
-                    <label>Player 4
-                        <input
-                            value={player4}
-                            placeholder="Enter Name"
-                            onChange={onNameChange4}/>
-                    </label>
-                    <label>Player 5
-                        <input
-                            value={player5}
-                            placeholder="Enter Name"
-                            onChange={onNameChange5}/>
-                    </label>
-                    <label>Player 6
-                        <input
-                            value={player6}
-                            placeholder="Enter Name"
-                            onChange={onNameChange6}/>
-                    </label>
-                </div>}
-            <Link to={"/api/question/random"}>
-                <button className="NextButtons" onClick={submitNames}>Let's go</button>
-            </Link>
-        </section>
+                    </div>}
+                {buttonValue.get("playerCount") === "5"  &&
+                    <div>
+                        <label>Player 3
+                            <input
+                                value={player3}
+                                placeholder="Enter Name"
+                                onChange={onNameChange3}/>
+                        </label>
+                        <label>Player 4
+                            <input
+                                value={player4}
+                                placeholder="Enter Name"
+                                onChange={onNameChange4}/>
+                        </label>
+                        <label>Player 5
+                            <input
+                                value={player5}
+                                placeholder="Enter Name"
+                                onChange={onNameChange5}/>
+                        </label>
+                    </div>}
+                {buttonValue.get("playerCount") === "6"  &&
+                    <div>
+                        <label>Player 3
+                            <input
+                                value={player3}
+                                placeholder="Enter Name"
+                                onChange={onNameChange3}/>
+                        </label>
+                        <label>Player 4
+                            <input
+                                value={player4}
+                                placeholder="Enter Name"
+                                onChange={onNameChange4}/>
+                        </label>
+                        <label>Player 5
+                            <input
+                                value={player5}
+                                placeholder="Enter Name"
+                                onChange={onNameChange5}/>
+                        </label>
+                        <label>Player 6
+                            <input
+                                value={player6}
+                                placeholder="Enter Name"
+                                onChange={onNameChange6}/>
+                        </label>
+                    </div>}
+                <Link to={"/api/question/random"}>
+                    <button className="NextButtons" onClick={submitNames}>Let's go</button>
+                </Link>
+            </section>
+        </div>
     )
 
 }
