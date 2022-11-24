@@ -2,6 +2,7 @@ import {Link} from "react-router-dom";
 import Restaurant from "../model/Restaurant";
 import RestaurantCard from "../components/RestaurantCard";
 import "../styles/RestaurantList.css";
+import Header from "../components/Header";
 
 type RestaurantListPageProps = {
     restaurants : Restaurant[]
@@ -11,9 +12,7 @@ export default function RestaurantListPage (props:RestaurantListPageProps) {
 
     return(
         <section>
-            <Link to="/" className="Title-header">
-                <h2>Snoople</h2>
-            </Link>
+            <Header/>
             <Link to={"/"}>&lt; back</Link>
             <div className ="cards">
                 {props.restaurants.map((rest) =>

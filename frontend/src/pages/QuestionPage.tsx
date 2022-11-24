@@ -46,7 +46,7 @@ export default function QuestionPage(props:QuestionPageProps) {
     return(
         <div className="pageLayout">
             <div onClick={() => setQuitRound(!quitRound)} className="Title-header">
-                <h2 >Snoople</h2>
+                <img className="logo" src={process.env.PUBLIC_URL + "/logo.png"} alt="logo"/>
             </div>
             {quitRound && <div className="grey"></div> }
             {quitRound &&
